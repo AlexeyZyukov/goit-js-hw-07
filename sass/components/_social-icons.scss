@@ -1,0 +1,41 @@
+.social-icons {
+  display: inline-flex;
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__link--bg-color {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+/* назанчение hover + focus фону иконки */
+
+.social-icons__link {
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+  }
+}
+
+/* назанчение hover и focus соц.иконке -
+при hover & focus по ссылке */
+
+.icon {
+  .social-icons__link:hover &,
+  .social-icons__link:focus & {
+    fill: $accent-button-text;
+  }
+}

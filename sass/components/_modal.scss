@@ -1,0 +1,64 @@
+/* формирование модального окна */
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  padding: 40px 40px;
+
+  @media screen and (max-width: 400px) {
+    padding: 40px 20px;
+  }
+
+  // размер модального окна уменьшен 10пкс от размера экрана
+  // для лучшего визуального восприятия
+  @media screen and (max-width: 320.98px) {
+    width: fit-content;
+    max-width: calc(100vw - 10px);
+  }
+
+  @media screen and (min-width: 321px) and (max-width: 767.98px) {
+    width: fit-content;
+    max-width: 450px;
+    height: fit-content;
+  }
+
+  @media screen and (min-width: 768px) {
+    min-width: 528px;
+    height: fit-content;
+  }
+
+  background: $body-bcg-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  opacity: 1;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &__icon {
+    fill: #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    .modal-close:hover & {
+      fill: $accent-color;
+    }
+  }
+}

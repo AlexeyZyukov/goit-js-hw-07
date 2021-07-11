@@ -1,0 +1,41 @@
+.current {
+  color: $accent-color;
+
+  @media screen {
+    &--index::after {
+      content: '';
+
+      width: 100%;
+      height: 4px;
+
+      background-image: url(../images/svg/current_underline_index.svg);
+      background-repeat: no-repeat;
+
+      margin: 0 auto;
+
+      position: absolute;
+      left: 50%;
+      bottom: -1px;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  @media screen {
+    &--portfolio::after {
+      content: '';
+
+      width: 100%;
+      height: 4px;
+
+      background-image: url(../images/svg/current_underline_portfolio.svg);
+      background-repeat: no-repeat;
+
+      margin: 0 auto;
+
+      position: absolute;
+      left: 50%;
+      bottom: -1px;
+      transform: translate(-50%, 0);
+    }
+  }
+}

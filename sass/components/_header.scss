@@ -1,0 +1,133 @@
+/* header - верхняя линия сайта */
+.header {
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.header-navigation {
+  display: flex;
+  align-items: baseline;
+
+  @media screen and (max-width: 767.98px) {
+    position: relative;
+    flex-wrap: wrap;
+  }
+}
+/* flexbox для header */
+
+@media screen and (max-width: 767.98px) {
+  .logo {
+    justify-content: start;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-navigation {
+    justify-content: space-between;
+  }
+  .navigation-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: auto;
+
+    // /* установка расстояния 50px между элементами */
+    &__item:not(:last-child) {
+      margin-right: 50px;
+    }
+
+    &__link {
+      position: relative;
+      display: block;
+      padding-top: 32px;
+      padding-bottom: 27px;
+      color: $main-text-color;
+
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover,
+      &:focus {
+        color: $accent-color;
+      }
+    }
+  }
+
+  .link-font {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+  }
+
+  .contacts {
+    display: flex;
+    align-items: baseline;
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      flex-direction: column;
+      align-self: center;
+    }
+
+    &__link {
+      display: inline-flex;
+      align-items: center;
+
+      padding-top: 32px;
+      padding-bottom: 24px;
+      color: $secondary-text-color;
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover,
+      &:focus {
+        color: $accent-color;
+      }
+
+      &:hover .e-mail,
+      &:focus .e-mail,
+      &:hover .smartphone,
+      &:focus .smartphone {
+        fill: $accent-color;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
+        padding: 0;
+
+        &:not(:last-of-type) {
+          margin-bottom: 10px;
+        }
+      }
+
+      @media screen and (min-width: 1200px) {
+        &:not(:last-of-type) {
+          margin-right: 50px;
+        }
+      }
+    }
+  }
+
+  .e-mail {
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+    fill: $secondary-text-color;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .smartphone {
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+    fill: $secondary-text-color;
+
+    transition: fill 250 ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .navigation,
+  .contacts {
+    display: none;
+  }
+}

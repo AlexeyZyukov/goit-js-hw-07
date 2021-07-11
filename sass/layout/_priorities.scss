@@ -1,0 +1,85 @@
+/* Приоритеты компании  */
+
+.priorities {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * #{$card-set-gap});
+    margin-left: calc(-1 * #{$card-set-gap});
+  }
+  &__item {
+    @media screen and (max-width: 767.98px) {
+      max-width: 450px;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      flex-basis: calc((100% - #{$card-set-gap} * 2) / 2);
+
+      margin-top: #{$card-set-gap};
+      margin-left: #{$card-set-gap};
+    }
+
+    @media screen and (min-width: 1200px) {
+      flex-basis: calc((100% - #{$card-set-gap} * 4) / 4);
+      margin-top: #{$card-set-gap};
+      margin-left: #{$card-set-gap};
+
+      // .priorities__item + .priorities__item {
+      //   margin-left: 30px;
+      // }
+    }
+  }
+}
+
+/* формирование и позиционирование картинок svg приоритета через background-image */
+.priorities__item::before {
+  content: '';
+  display: block;
+  height: 120px;
+
+  background: #f5f4fa;
+  border-radius: 4px;
+
+  margin-bottom: 30px;
+  background-size: 70px 70px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.priorities__icon-details::before {
+  background-image: url(../images/svg/antenna.svg);
+}
+
+.priorities__icon-timeliness::before {
+  background-image: url(../images/svg/clock.svg);
+}
+
+.priorities__icon-planning::before {
+  background-image: url(../images/svg/diagram.svg);
+}
+
+.priorities__icon-technology::before {
+  background-image: url(../images/svg/astronaut.svg);
+}
+
+.priorities__header {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  margin-bottom: 10px;
+
+  @media screen and (max-width: 767.98px) {
+    text-align: center;
+  }
+}
+
+.priorities__text {
+  color: $secondary-text-color;
+  line-height: 1.71;
+}

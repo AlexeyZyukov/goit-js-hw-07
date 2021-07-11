@@ -1,0 +1,153 @@
+/* оформление формы ввода данных клиента модального окна */
+.registration-form {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    color: $main-text-color;
+    margin-bottom: 12px;
+  }
+}
+
+.label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__description {
+    margin-bottom: 4px;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 12px;
+    top: 30px;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:not(:first-of-type) {
+    margin-top: 10px;
+  }
+}
+
+.label__input-field,
+.registration-form__comment {
+  border: 1px solid $modal-client-border;
+  border-radius: 4px;
+  height: 40px;
+  padding-left: 42px;
+
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.label__icon {
+  .label:hover &,
+  .label__input-field:hover + &,
+  .label__input-field:focus + & {
+    fill: $accent-color;
+  }
+}
+
+.label__input-field {
+  & :hover,
+  & :focus {
+    border: 1px solid $accent-color;
+    outline-color: $accent-color;
+  }
+}
+
+/* назначение ховера полю ввода при наведении для
+выделении его при наведении на иконку, когда курсор стоит
+в поле ввода */
+.label:hover > .label__input-field {
+  outline: 1px solid $accent-color;
+}
+
+.registration-form__comment {
+  resize: none;
+  max-width: 448px;
+  height: 120px;
+  padding: 12px 16px;
+}
+
+/* форма принятия условий */
+
+.form-check {
+  display: flex;
+  align-items: center;
+
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  &__agreement {
+    line-height: 1.71;
+    color: $secondary-text-color;
+    margin-right: 0.3em;
+
+    @media screen and (max-width: 767.98px) {
+      font-size: 12px;
+      line-height: 1.17;
+      margin-right: 0.2em;
+    }
+  }
+
+  &__link {
+    color: $accent-color;
+    text-underline-position: under;
+
+    @media screen and (max-width: 767.98px) {
+      font-size: 12px;
+      line-height: 1.17;
+    }
+  }
+}
+
+.form-check__text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.form-send {
+  width: 200px;
+  height: 50px;
+  align-self: center;
+  color: #fff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* формируем кастомный чек-бокс */
+.form-check__box {
+  display: block;
+  // align-self: center;
+  min-width: 16px;
+  min-height: 15px;
+  margin-right: 8px;
+
+  overflow: hidden;
+  border-radius: 1px;
+  background-color: rgb(250, 250, 250);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  box-shadow: 0 0 0 0.1em $main-text-color;
+
+  /* Checked */
+  .form-check__input:checked + & {
+    background-color: $accent-color;
+    background-image: url(../images/svg/check_mark.svg);
+    // background-repeat: no-repeat;
+    // background-position: center;
+  }
+  /* Focused */
+  .form-check__input:focus + & {
+    box-shadow: 0 0 0 0.1em $accent-color;
+  }
+}

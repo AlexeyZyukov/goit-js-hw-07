@@ -1,0 +1,58 @@
+/* секция Чем мы занимаемся и Наша команда */
+.company-activity {
+  padding-top: 0;
+
+  @media screen and (max-width: 1199px) {
+    display: none;
+  }
+}
+
+// формирование сетки элементов секции
+.activity-description {
+  display: flex;
+  /* Делаем Flex-контейнет многострочным */
+  flex-wrap: wrap;
+  /* Компенсируем маржины элементов */
+  margin-left: calc(-1 * #{$card-set-gap});
+  margin-top: calc(-1 * #{$card-set-gap});
+
+  &__item {
+    /* Задаём всем элементам маржины слева и сверху */
+    margin-left: #{$card-set-gap};
+    margin-top: #{$card-set-gap};
+    /*  Задаём ширину элементов  */
+    flex-basis: calc((100% - #{$card-set-gap} * 3) / 3);
+  }
+}
+
+.company-activity__header {
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 36px;
+  text-align: center;
+  line-height: 1.17;
+}
+
+.activity-description {
+  &__thumb {
+    position: relative;
+  }
+
+  &__thumb-text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+
+    background: rgba(47, 48, 58, 0.8);
+
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $accent-button-text;
+  }
+}
