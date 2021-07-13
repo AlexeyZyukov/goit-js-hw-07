@@ -11,31 +11,22 @@
 // Категория: Животные
 // Количество элементов: 4
 
-const categoriesListEl = document.querySelectorAll('.item')
-const showNumbersOfCategories = element => `В списке ${element.length} категории.`
-console.log(showNumbersOfCategories(categoriesListEl));
+const categoriesList = document.querySelectorAll(".item") //возвращает массив "узлов" элемента с перечнем их аттрибутов и св-в
+const showNumbersOfCategories = array => `В списке ${array.length} категории.`
+console.log(showNumbersOfCategories(categoriesList));
+console.log('categoriesList', categoriesList); 
 
-const showCategories = element => element.forEach(el =>
-    console.log(`Категория: ${el.querySelector(`h2`).textContent}. 
-Количество элементов: ${el.querySelectorAll(`li`).length}.`))
-showCategories(categoriesListEl);
+const showCategories = array => array.forEach(item =>
+    console.log(`Категория: ${item.querySelector(`h2`).textContent}. 
+Количество элементов: ${item.querySelectorAll(`li`).length}.`))
+showCategories(categoriesList);
 
-// const ulAll = document.querySelectorAll(".item");
+// const ulAll = document.querySelectorAll(".item"); //возвращает массив "узлов" элемента с перечнем их аттрибутов и св-в
 // console.log(`В списке ul#categories ${ulAll.length} категории.`);
 // console.log('ulAll', ulAll);
 
-// const ulCategories = document.querySelector('ul');
+// const ulCategories = document.querySelector('ul'); //querySelector возвращает массив с html-разметкой элемента, показывает все li с их структурой в формате html-разметки
 // console.log('ulCategories', ulCategories);
 // console.log('ulCategories.children', ulCategories.children);
-// console.log('ulCategories.children[]', ulCategories.children[0]);
-
-//console.log(ulAll.children[0]);
 
 
-
-// const ulAllItemsQuantity = ulAll.length;
-// console.log(ulAllItemsQuantity);
-
-//const headerValue = document.querySelector(".pets");
-//const headerValue = document.querySelector('h2');
-// console.log(headerValue.textContent);
