@@ -32,7 +32,7 @@ console.log(galleryImagesEl);
 
 
 const imagesGalleryContainer = images => images.map(image => {
-  galleryImagesEl.insertAdjacentHTML('beforeend', `<li class="gallery-item">
+  galleryImagesEl.insertAdjacentHTML('beforeend', `<li class="gallery_item">
   <img src = ${image.url}
   alt = ${image.alt}
   width = "640">
