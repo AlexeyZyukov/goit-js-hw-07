@@ -26,18 +26,59 @@ const images = [
   },
 ];
 
-const galleryEl = document.querySelector('#gallery');
-//console.log(galleryEl);
+const galleryImagesEl = document.querySelector('#gallery');
+galleryImagesEl.classList.add("gallery--flex");
+console.log(galleryImagesEl);
 
-const liEl = document.createElement('li');
-const imageEl = document.createElement('img');
-imageEl.src = 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
-imageEl.alt = 'White and Black Long Fur Cat'
-imageEl.width = 480;
 
-liEl.appendChild(imageEl);
-galleryEl.append(liEl);
-console.log(galleryEl);
+const imagesGalleryContainer = images => images.map(image => {
+  galleryImagesEl.insertAdjacentHTML('beforeend', `<li class="gallery-item">
+  <img src = ${image.url}
+  alt = ${image.alt}
+  width = "640">
+  </li >`);
+  
+  return galleryImagesEl;
+})
 
-// console.log(liEl);
-// console.log(imageEl);
+imagesGalleryContainer(images);
+
+//=============================================================================
+// const addImageToGallery = images => {
+//   return images.map(image => {
+//     const liEl = document.createElement('li');
+//     const imageEl = document.createElement('img');
+//     imageEl.src = image.url;
+//     imageEl.alt = image.alt;
+//     imageEl.width = 640;
+
+//     liEl.append(imageEl);
+//     return liEl;
+//   });
+// };
+
+// const imagesAddedToGalery = addImageToGallery(images);
+// console.log(imagesAddedToGalery);
+// galleryImagesEl.append(imagesAddedToGalery);
+
+
+// galleryImagesEl.insertAdjacentHTML('afterbegin', `<li>
+// <img src = "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+// alt = "White and Black Long Fur Cat"
+// width = "640">
+// </li >`);
+
+// const imagesInGallery = images.map(image => {
+//   const liEl = document.createElement('li');
+//   const imageEl = document.createElement('img');
+//   imageEl.src = image.url;
+//   imageEl.alt = image.alt;
+//   imageEl.width = 640;
+
+//   liEl.append(imageEl);
+//   console.log(liEl);
+//   return liEl;
+// });
+
+// console.log(imagesInGallery);
+// galleryImagesEl.append(imagesInGallery);

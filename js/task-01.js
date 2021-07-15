@@ -21,6 +21,8 @@ const showCategories = array => array.forEach(item =>
 Количество элементов: ${item.querySelectorAll(`li`).length}.`))
 showCategories(categoriesList);
 
+
+//========================================================
 // const ulAll = document.querySelectorAll(".item"); //возвращает массив "узлов" элемента с перечнем их аттрибутов и св-в
 // console.log(`В списке ul#categories ${ulAll.length} категории.`);
 // console.log('ulAll', ulAll);

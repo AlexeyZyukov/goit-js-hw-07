@@ -21,14 +21,6 @@ const ingredients = [
 
 const listOfIngredients = document.querySelector("#ingredients");
 
-// const addIngredients = ingredients.map(item => {
-//   const liEl = document.createElement('li');
-//   liEl.textContent = item;
-//   listOfIngredients.append(liEl);
-//   return liEl;
-// });
-// console.log(addIngredients);
-
 const addListOfIngredients = items => {
   return items.map(item => {
   const liEl = document.createElement('li');
@@ -37,8 +29,17 @@ const addListOfIngredients = items => {
   return liEl;
   });
 }
-console.log(addListOfIngredients(ingredients));
+addListOfIngredients(ingredients);
+//console.log(addListOfIngredients(ingredients));
 
+//====================================================================
+// const addIngredients = ingredients.map(item => {
+//   const liEl = document.createElement('li');
+//   liEl.textContent = item;
+//   listOfIngredients.append(liEl);
+//   return liEl;
+// });
+// console.log(addIngredients);
 
 // const listOfIngredients = document.querySelector("#ingredients");
 // const newElem = document.createElement('li');

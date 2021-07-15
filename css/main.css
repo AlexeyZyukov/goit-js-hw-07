@@ -1,0 +1,12 @@
+.gallery--flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.gallery_item {
+  flex-basis: calc((100% - 20px * 2) / 2);
+}
+.gallery_item:not(:last-of-type) {
+  margin-right: 10px;
+}
