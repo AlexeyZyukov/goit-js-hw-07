@@ -8,11 +8,14 @@
 const refs = {
     input: document.querySelector('#name-input'),
     nameOutput: document.querySelector('#name-output'),
-}; //объявлен объект ссылок на элементы
+};
+//refs - объявлен объект ссылок на элементы вместо:
+// const input = document.querySelector('#name-input');
+// const nameOutput = document.querySelector('#name-output');
 
 refs.input.addEventListener('input', onInputChange);
 
 function onInputChange(event) {
     //console.log(event.currentTarget.value);
     refs.nameOutput.textContent = event.currentTarget.value;
-} //event.currentTarget.value - содержит информацию о введенных данных
+} //event.currentTarget.value - содержит информацию о введенных данных в поле input формы 
