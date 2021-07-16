@@ -28,7 +28,7 @@ const images = [
 
 const galleryImagesEl = document.querySelector('#gallery');
 galleryImagesEl.classList.add("gallery--flex");
-console.log(galleryImagesEl);
+//console.log(galleryImagesEl);
 
 
 const imagesGalleryContainer = images => images.map(image => {
