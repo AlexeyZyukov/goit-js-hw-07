@@ -11,4 +11,26 @@
 // </div>
 
 const counterValue = document.querySelector('#value');
-console.log(counterValue);
+//console.log(counterValue);
+//console.log(counterValue.textContent);//возвращает текстовое значение span
+
+const incrementBtn = document.querySelector('button[data-action="increment"]');
+//console.log(incrementBtn.textContent);
+const decrementBtn = document.querySelector('button[data-action="decrement"]')
+//console.log(decrementBtn.textContent);
+
+incrementBtn.addEventListener('click', () => {
+    //console.log(event);
+    let num = Number(counterValue.textContent);
+    num += 1;
+    counterValue.textContent = num;
+    //console.log(counterValue.textContent);
+})
+
+decrementBtn.addEventListener('click', () => {
+    //console.log(event);
+    let num = Number(counterValue.textContent);
+    num -= 1;
+    counterValue.textContent = num;
+    //console.log(counterValue.textContent);
+})
