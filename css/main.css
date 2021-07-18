@@ -1,4 +1,4 @@
-/* task-03 =============================== */
+.initial/* task-03 =============================== */
 .gallery--flex {
   display: flex;
   flex-wrap: wrap;
@@ -14,8 +14,6 @@
 
 /* task-06 =============================== */
 #validation-input {
-  margin-left: 10px;
-  margin-top: 30px;
   border: 3px solid #bdbdbd;
 }
 
