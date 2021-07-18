@@ -30,13 +30,14 @@ validationInputEl.addEventListener('blur', callbackFn);
 
 function callbackFn(event) {
     let symbolQuantity = event.currentTarget.value;
-    console.log(symbolQuantity.length);
-    
-  if (symbolQuantity.length === Number(validationInputEl.getAttribute('data-length'))) {
-    validationInputEl.classList.add("valid");
-    console.log(`${validationInputEl.getAttribute('data-length')} symbols are entered`)
+  console.log(event)
+  console.log(symbolQuantity.length);
+      
+  if (symbolQuantity.length === Number(this.getAttribute('data-length'))) {
+    this.classList.add("valid");
+    console.log(`${this.getAttribute('data-length')} symbols are entered`)
   } else {
-    validationInputEl.classList.add("invalid");
-    console.log(`more or less then ${validationInputEl.getAttribute('data-length')} symbols was entered`)
+    this.classList.add("invalid");
+    console.log(`more or less then ${this.getAttribute('data-length')} symbols was entered`)
     }
 };
