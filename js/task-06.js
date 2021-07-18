@@ -33,8 +33,10 @@ function callbackFn(event) {
   console.log(event)
   console.log(symbolQuantity.length);
 
-  if (symbolQuantity.length > 0 && symbolQuantity.length < Number(this.getAttribute('data-length')) || symbolQuantity.length > Number(this.getAttribute('data-length'))) {
+  // if (symbolQuantity.length > 0 || symbolQuantity.length < Number(this.getAttribute('data-length')) || symbolQuantity.length > Number(this.getAttribute('data-length'))) {
+  if (symbolQuantity.length > 0 && symbolQuantity.length !== Number(this.getAttribute('data-length'))) {
     this.classList.add('invalid')
+    // console.log(`more or less symbols then ${this.getAttribute('data-length')} was input`)
   }
   else {
     this.classList.replace('invalid', 'valid')
