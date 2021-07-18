@@ -32,12 +32,11 @@ function callbackFn(event) {
     let symbolQuantity = event.currentTarget.value;
   console.log(event)
   console.log(symbolQuantity.length);
-      
-  if (symbolQuantity.length === Number(this.getAttribute('data-length'))) {
-    this.classList.add("valid");
-    console.log(`${this.getAttribute('data-length')} symbols are entered`)
-  } else {
-    this.classList.add("invalid");
-    console.log(`more or less then ${this.getAttribute('data-length')} symbols was entered`)
-    }
+
+  if (symbolQuantity.length > 0 && symbolQuantity.length < Number(this.getAttribute('data-length')) || symbolQuantity.length > Number(this.getAttribute('data-length'))) {
+    this.classList.add('invalid')
+  }
+  else {
+    this.classList.replace('invalid', 'valid')
+  }
 };
