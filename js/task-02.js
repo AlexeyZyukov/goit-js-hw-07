@@ -6,9 +6,7 @@
 // В JS есть массив строк.
 // Напиши скрипт, который для каждого элемента массива ingredients создаст 
 //отдельный li, после чего вставит все li за одну операцию в список ul.ingredients.
-//ля создания DOM - узлов используй document.createElement().
-
-
+//для создания DOM - узлов используй document.createElement().
 
 const ingredients = [
   'Картошка',
@@ -20,16 +18,42 @@ const ingredients = [
 ];
 
 const listOfIngredients = document.querySelector("#ingredients");
+  console.log(listOfIngredients);
+const ingredientsMarkup = createListOfIngredients(ingredients);
+  console.log(ingredientsMarkup);
+listOfIngredients.append(ingredientsMarkup);
+  // console.log(listOfIngredients);
 
-const addListOfIngredients = items => {
+function createListOfIngredients(items) {
   return items.map(item => {
-  const liEl = document.createElement('li');
-  liEl.textContent = item;
-  listOfIngredients.append(liEl);
-  return liEl;
-  });
+    const liEl = document.createElement('li');
+    liEl.textContent = item;
+      console.log(liEl);
+    return liEl;
+  }); 
 }
-addListOfIngredients(ingredients);
+
+
+//===========================
+// const createListOfIngredients = items => {
+//   return items.map(item => {
+//     const liEl = document.createElement('li');
+//     liEl.textContent = item;
+//     console.log(liEl);
+//     return liEl;
+//   }); 
+// }
+
+//==========вариант 1====================
+// const addListOfIngredients = items => {
+//   return items.map(item => {
+//   const liEl = document.createElement('li');
+//   liEl.textContent = item;
+//   listOfIngredients.append(liEl);
+//   return liEl;
+//   });
+// }
+// addListOfIngredients(ingredients);
 //console.log(addListOfIngredients(ingredients));
 
 //====================================================================

@@ -26,22 +26,65 @@ const images = [
   },
 ];
 
-const galleryImagesEl = document.querySelector('#gallery');
-galleryImagesEl.classList.add("gallery--flex");
-//console.log(galleryImagesEl);
+const imagesGalleryContainer = document.querySelector('#gallery');
+imagesGalleryContainer.classList.add("gallery--flex");
+//console.log(imagesGalleryContainer);
+const imageCardMarkup = createImageCard(images);
+//console.log(imageCardMarkup);
+imagesGalleryContainer.insertAdjacentHTML('beforeend', imageCardMarkup);
 
+function createImageCard(images) {
+  return images.map(({ url, alt }) => { //return убирает лишние переменные, деструктуризация image -> {url, alt} улучшает код
+    return `<li class="gallery_item">
+    <img src = ${url}
+    alt = ${alt}
+    width = "640">
+    </li >`
+  }).join(''); // метод join преобразует массив в строку по разделителю ''
+};
 
-const imagesGalleryContainer = images => images.map(image => {
-  galleryImagesEl.insertAdjacentHTML('beforeend', `<li class="gallery_item">
-  <img src = ${image.url}
-  alt = ${image.alt}
-  width = "640">
-  </li >`);
+//========вариант 2====================
+// function createImageCard(images) {
+//   const card = images.map((image) => {
+//     const imageEl = `<li class="gallery_item">
+//     <img src = ${image.url}
+//     alt = ${image.alt}
+//     width = "640">
+//     </li >`
+//     return imageEl
+//   }).join(''); // метод join преобразует массив, полученный через map, в строку по разделителю ''
+//   return card;
+// };
+
+//=======вариант 1=============================
+// const imagesGalleryContainer = images => images.map(image => {
+//   galleryImagesEl.insertAdjacentHTML('beforeend', `<li class="gallery_item">
+//   <img src = ${image.url}
+//   alt = ${image.alt}
+//   width = "640">
+//   </li >`);
   
-  return galleryImagesEl;
-})
+//   return galleryImagesEl;
+// })
 
-imagesGalleryContainer(images);
+
+
+// const galleryImagesEl = document.querySelector('#gallery');
+// galleryImagesEl.classList.add("gallery--flex");
+// //console.log(galleryImagesEl);
+
+
+// const imagesGalleryContainer = images => images.map(image => {
+//   galleryImagesEl.insertAdjacentHTML('beforeend', `<li class="gallery_item">
+//   <img src = ${image.url}
+//   alt = ${image.alt}
+//   width = "640">
+//   </li >`);
+  
+//   return galleryImagesEl;
+// })
+
+// imagesGalleryContainer(images);
 
 //=============================================================================
 // const addImageToGallery = images => {
