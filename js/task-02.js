@@ -18,33 +18,25 @@ const ingredients = [
 ];
 
 const listOfIngredients = document.querySelector("#ingredients");
-  console.log(listOfIngredients);
+  //console.log(listOfIngredients);
 const ingredientsMarkup = createListOfIngredients(ingredients);
-  console.log(ingredientsMarkup);
-listOfIngredients.append(ingredientsMarkup);
+  //console.log(ingredientsMarkup);
+listOfIngredients.append(...ingredientsMarkup);
   // console.log(listOfIngredients);
 
 function createListOfIngredients(items) {
   return items.map(item => {
     const liEl = document.createElement('li');
     liEl.textContent = item;
-      console.log(liEl);
+      //console.log(liEl);
     return liEl;
   }); 
 }
 
 
-//===========================
-// const createListOfIngredients = items => {
-//   return items.map(item => {
-//     const liEl = document.createElement('li');
-//     liEl.textContent = item;
-//     console.log(liEl);
-//     return liEl;
-//   }); 
-// }
 
-//==========вариант 1====================
+
+//==========вариант 1 - wrong====================
 // const addListOfIngredients = items => {
 //   return items.map(item => {
 //   const liEl = document.createElement('li');
