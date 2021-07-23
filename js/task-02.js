@@ -22,7 +22,7 @@ const listOfIngredients = document.querySelector("#ingredients");
 const ingredientsMarkup = createListOfIngredients(ingredients);
   //console.log(ingredientsMarkup);
 listOfIngredients.append(...ingredientsMarkup);
-  // console.log(listOfIngredients);
+  console.log(listOfIngredients);
 
 function createListOfIngredients(items) {
   return items.map(item => {
