@@ -12,6 +12,7 @@
 // Количество элементов: 4
 
 const categoriesList = document.querySelectorAll(".item") //возвращает массив "узлов" элемента с перечнем их аттрибутов и св-в
+console.log(categoriesList);
 const showNumbersOfCategories = array => `В списке ${array.length} категории.`
 console.log(showNumbersOfCategories(categoriesList));
 console.log('categoriesList', categoriesList); 
